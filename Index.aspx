@@ -4,9 +4,12 @@
     <link href="lib/css/index.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h6 class="ms-2 text-secondary text-center">Student List</h6>
+     <h5 class="ms-2 text-secondary">Student List</h5>
+ <hr class="mb-3" />
+    
+
     <hr class="mb-3" />
-    <asp:GridView ID="GridView1" CssClass=" m-2 p-2 text-secondary" runat="server" AutoGenerateColumns="False" BackColor="#393E46" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="STUDENTNO" DataSourceID="SqlDataSource1" Width="1000px">
+    <asp:GridView ID="GridView1" CssClass="text-secondary text-center" runat="server" AutoGenerateColumns="False" BackColor="#393E46" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="STUDENTNO" DataSourceID="SqlDataSource1" Width="1000px">
         <Columns>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="STUDENTNO" HeaderText="STUDENTNO" ReadOnly="True" SortExpression="STUDENTNO" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="STUDENTNAME" HeaderText="STUDENTNAME" SortExpression="STUDENTNAME" />
@@ -26,27 +29,9 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM &quot;STUDENT&quot; WHERE &quot;STUDENTNO&quot; = :STUDENTNO" InsertCommand="INSERT INTO &quot;STUDENT&quot; (&quot;STUDENTNO&quot;, &quot;STUDENTNAME&quot;, &quot;CONTACT&quot;, &quot;DOB&quot;, &quot;EMAILADDRESS&quot;, &quot;COUNTRY&quot;) VALUES (:STUDENTNO, :STUDENTNAME, :CONTACT, :DOB, :EMAILADDRESS, :COUNTRY)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM &quot;STUDENT&quot;" UpdateCommand="UPDATE &quot;STUDENT&quot; SET &quot;STUDENTNAME&quot; = :STUDENTNAME, &quot;CONTACT&quot; = :CONTACT, &quot;DOB&quot; = :DOB, &quot;EMAILADDRESS&quot; = :EMAILADDRESS, &quot;COUNTRY&quot; = :COUNTRY WHERE &quot;STUDENTNO&quot; = :STUDENTNO">
-        <DeleteParameters>
-            <asp:Parameter Name="STUDENTNO" Type="Decimal" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="STUDENTNO" Type="Decimal" />
-            <asp:Parameter Name="STUDENTNAME" Type="String" />
-            <asp:Parameter Name="CONTACT" Type="String" />
-            <asp:Parameter Name="DOB" Type="DateTime" />
-            <asp:Parameter Name="EMAILADDRESS" Type="String" />
-            <asp:Parameter Name="COUNTRY" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="STUDENTNAME" Type="String" />
-            <asp:Parameter Name="CONTACT" Type="String" />
-            <asp:Parameter Name="DOB" Type="DateTime" />
-            <asp:Parameter Name="EMAILADDRESS" Type="String" />
-            <asp:Parameter Name="COUNTRY" Type="String" />
-            <asp:Parameter Name="STUDENTNO" Type="Decimal" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT STUDENTNO, STUDENTNAME, CONTACT, DOB, EMAILADDRESS, COUNTRY FROM STUDENT">
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;STUDENTNO&quot;, &quot;STUDENTNAME&quot; FROM &quot;STUDENT&quot;"></asp:SqlDataSource>
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="STUDENTNO" DataSourceID="SqlDataSource1" Height="107px" Width="1000px">
         <EditItemTemplate>
             STUDENTNO:
@@ -72,22 +57,22 @@
         </EditItemTemplate>
         <InsertItemTemplate>
             <div class="row justify-content-center text-secondary ms-2 add">
-                <h6 class="bg-success p-2 w-50 text-center text-white">Add New Student</h6>
+                <h6 class="bg-info p-2 w-50 mt-2 text-center text-white">Add New Student</h6>
                 <br />
-                <div class="col-8 d-flex flex-wrap gap-2 border-2 bg-light p-2">
+                <div class="col-8 d-flex flex-wrap gap-2 mb-1 border-2 bg-light p-2">
                     <div class="form-group">
-                        <label for="STUDENTNOTextBox">STUDENTNO:</label>
+                        <label for="STUDENTNOTextBox">Student No:</label>
                         <br />
                         <asp:TextBox ID="STUDENTNOTextBox" runat="server" CssClass="form-control-sm" Text='<%# Bind("STUDENTNO") %>' />
                     </div>
                     <br />
                     <div class="form-group">
-                        <label for="STUDENTNAMETextBox">STUDENTNAME:</label><br />
+                        <label for="STUDENTNAMETextBox">Student Name:</label><br />
                         <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control-sm" Text='<%# Bind("STUDENTNAME") %>' />
                     </div>
                     <br />
                     <div class="form-group">
-                        <label for="CONTACTTextBox">CONTACT:</label><br />
+                        <label for="CONTACTTextBox">Contact:</label><br />
                         <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control-sm" Text='<%# Bind("CONTACT") %>' />
                     </div>
                     <br />
@@ -97,23 +82,25 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <label for="EMAILADDRESSTextBox">EMAILADDRESS:</label><br />
+                        <label for="EMAILADDRESSTextBox">Email Address:</label><br />
                         <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control-sm" Text='<%# Bind("EMAILADDRESS") %>' />
                     </div>
                     <br />
                     <div class="form-group">
-                        <label for="COUNTRYTextBox">COUNTRY:</label><br />
+                        <label for="COUNTRYTextBox">Country:</label><br />
                         <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control-sm" Text='<%# Bind("COUNTRY") %>' />
                     </div>
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" CssClass="btn btn-primary" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CssClass="btn btn-danger mt-1" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" CssClass="btn btn-sm  btn-primary" Text='<i class="bi bi-plus-circle-fill"></i> Insert' />
+                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CssClass="btn btn-sm  btn-danger" CausesValidation="False" CommandName="Cancel" Text=' <i class="bi bi-x-circle-fill"></i> Cancel' />
                 </div>
             </div>
-
         </InsertItemTemplate>
         <ItemTemplate>
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CssClass="btn btn-success mt-0" CausesValidation="False" CommandName="New" Text="Insert New Student" />
+            <div class="mb-5">
+                <asp:LinkButton ID="NewButton" runat="server" CssClass="btn btn-sm btn-info" CausesValidation="False" CommandName="New" Text='<i class="bi bi-plus-square-fill"></i>   Insert New Student' />
+            </div>
         </ItemTemplate>
     </asp:FormView>
 </asp:Content>
+<%--SelectCommand="SELECT * FROM &quot;STUDENT&quot; WHERE (&quot;STUDENTNO&quot; = :STUDENTNO)">--%>

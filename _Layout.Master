@@ -8,25 +8,52 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
     <link href="lib/css/Layout.css" rel="stylesheet" />
 </head>
 
 <body>
     <form id="form1" runat="server">
         <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand ps-3 text-center">E-Learning-Platform</a>
+            <nav class="navbar navbar-expand-lg d-flex justify-content-center align-items-center">
+                <i class="bi bi-book fs-4"></i>
+                <a class="navbar-brand fs-6 ps-3 text-white text-center">E-Learning-Platform</a>
             </nav>
         </header>
         <div class="sidebar" id="sidebar">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="Index.aspx" class="nav-link text-white mt-3 mb-1">Student</a>
+                    <h6 class="text-info ms-4"><i class="bi bi-list-nested"></i>Navbar</h6>
+                    <hr class="text-white" />
+                </li>
+                  <li class="nav-item">
+      <a href="Dashboard.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-person-check-fill"></i> Student</a>
+  </li>
+                <li class="nav-item">
+                    <a href="Index.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-person-check-fill"></i> Student</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Courses.aspx" class="nav-link text-white mt-3 mb-1">Course</a>
+                    <a href="Instructor.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-person-square"></i>  Instructor</a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="Courses.aspx" class="nav-link  mt-3 mb-1"><i class="bi bi-journals"></i>  Course</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Lesson.aspx" class="nav-link  mt-3 mb-1"><i class="bi bi-book-half"></i>  Lesson</a>
+                </li>
+                <li class="nav-item">
+                    <a href="LessonStatus.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-send-check-fill"></i>  Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a href="StudentEnrollmentDetails.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-person-plus-fill"></i>  Student-Enrollment</a>
+                </li>
+                <li class="nav-item">
+                    <a href="CI.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-person-workspace"></i>  Course-Instructor</a>
+                </li>
+                <li class="nav-item">
+                    <a href="PopularCourseDetails.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-list-check"></i>  Best E-Course</a>
+                </li>
             </ul>
         </div>
 
@@ -36,7 +63,7 @@
                 </asp:ContentPlaceHolder>
             </div>
         </div>
-        <%--  <div id="footer">
+        <%--   <div id="footer">
             <p>&copy; 2024 My E-Learning Platform. All rights reserved.</p>
         </div>--%>
     </form>

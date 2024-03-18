@@ -11,7 +11,7 @@ namespace ELearningPlatform
 {
 
 
-    public partial class Index
+    public partial class Instructor
     {
 
         /// <summary>
@@ -24,22 +24,13 @@ namespace ELearningPlatform
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// InstructorList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
-        /// <summary>
-        /// SqlDataSource2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.SqlDataSource InstructorList;
 
         /// <summary>
         /// FormView1 control.
