@@ -53,7 +53,7 @@
             <div class="row justify-content-center text-secondary ms-2 add">
                 <h6 class="bg-info p-2 w-50 mt-2 text-center text-white">Add New Instructor</h6>
                 <br />
-                <div class="col-6 d-flex flex-wrap gap-2 bg-light border-2 mb-3  p-2">
+                <div class="col-8 d-flex flex-wrap gap-2 bg-light border-2 mb-3  p-2">
                     <div class="form-group">
                         <label for="COURSEINSTRUCTORIDTextBox">Instructor ID:</label>
                         <br />
@@ -66,8 +66,11 @@
                         <asp:TextBox ID="COURSEINSTRUCTORNAMETextBox" runat="server" CssClass="form-control-sm" Text='<%# Bind("COURSEINSTRUCTORNAME") %>' />
                     </div>
                     <br />
-                    <asp:LinkButton ID="InsertButton" CssClass="btn btn-sm btn-primary mt-0" runat="server" CausesValidation="True" CommandName="Insert" Text='<i class="bi bi-plus-circle-fill"></i> Insert'/>
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-sm  btn-danger mt-0" runat="server" CausesValidation="False" CommandName="Cancel" Text=' <i class="bi bi-x-circle-fill"></i> Cancel' />
+                </div>
+                    <div class="ms-5 mb-2">
+                        <asp:LinkButton ID="InsertButton" CssClass="btn btn-sm btn-primary mt-0" runat="server" CausesValidation="True" CommandName="Insert" Text='<i class="bi bi-plus-circle-fill"></i> Insert' />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-sm  btn-danger mt-0" runat="server" CausesValidation="False" CommandName="Cancel" Text=' <i class="bi bi-x-circle-fill"></i> Cancel' />
+                    </div>
         </InsertItemTemplate>
         <ItemTemplate>
             &nbsp;<asp:LinkButton ID="NewButton" CssClass="btn btn-sm  btn-info mt-2" runat="server" CausesValidation="False" CommandName="New" Text='<i class="bi bi-plus-square-fill"></i> Insert New Instructor' />

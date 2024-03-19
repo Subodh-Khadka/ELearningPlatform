@@ -13,6 +13,15 @@
             <asp:ListItem Text="January" Value="1"></asp:ListItem>
             <asp:ListItem Text="February" Value="2"></asp:ListItem>
             <asp:ListItem Text="March" Value="3"></asp:ListItem>
+            <asp:ListItem Text="April" Value="4"></asp:ListItem>
+            <asp:ListItem Text="May" Value="5"></asp:ListItem>
+            <asp:ListItem Text="June" Value="6"></asp:ListItem>
+            <asp:ListItem Text="July" Value="7"></asp:ListItem>
+            <asp:ListItem Text="August" Value="8"></asp:ListItem>
+            <asp:ListItem Text="September" Value="9"></asp:ListItem>
+            <asp:ListItem Text="October" Value="10"></asp:ListItem>
+            <asp:ListItem Text="November" Value="11"></asp:ListItem>
+            <asp:ListItem Text="December" Value="12"></asp:ListItem>
         </asp:DropDownList>
     </div>
     <asp:GridView ID="GridView1" runat="server" CssClass="text-secondary text-center w-100" AutoGenerateColumns="False" DataKeyNames="COURSEID" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
@@ -38,10 +47,14 @@
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>"
-        SelectCommand="SELECT c.COURSEID, c.COURSETITLE, COUNT(s.STUDENTNO) AS ENROLLMENT_COUNT 
-        FROM COURSE c, COURSE_INSTRUCTOR_STUDENT cis, STUDENT s 
-        WHERE c.COURSEID = cis.COURSEID AND cis.STUDENTID = s.STUDENTNO 
-        GROUP BY c.COURSEID, c.COURSETITLE ORDER BY ENROLLMENT_COUNT DESC"></asp:SqlDataSource>
+        SelectCommand="SELECT * FROM (
+           SELECT e.COURSEID, c.COURSETITLE, COUNT(e.STUDENTNO) AS ENROLLMENT_COUNT
+           FROM enrollment e
+           JOIN course c ON e.COURSEID = c.COURSEID
+           WHERE EXTRACT(MONTH FROM e.ENROLLDATE) = 1
+           GROUP BY e.COURSEID, c.COURSETITLE
+           ORDER BY COUNT(e.STUDENTNO) DESC) 
+   WHERE ROWNUM <= 3"></asp:SqlDataSource>
 
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;ENROLLDATE&quot; FROM &quot;ENROLLMENT&quot;"></asp:SqlDataSource>

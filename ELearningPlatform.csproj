@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,6 +79,7 @@
     <Content Include="Instructor.aspx" />
     <Content Include="Lesson.aspx" />
     <Content Include="LessonStatus.aspx" />
+    <Content Include="lib\anatomy.jpg" />
     <Content Include="lib\bootstrap\dist\css\bootstrap-grid.css" />
     <Content Include="lib\bootstrap\dist\css\bootstrap-grid.min.css" />
     <Content Include="lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
@@ -100,8 +102,14 @@
     <Content Include="lib\bootstrap\dist\js\bootstrap.esm.min.js" />
     <Content Include="lib\bootstrap\dist\js\bootstrap.js" />
     <Content Include="lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="lib\Course.jpg" />
     <Content Include="lib\css\index.css" />
     <Content Include="lib\css\Layout.css" />
+    <Content Include="lib\enroll-now-registration-membership-concept.jpg" />
+    <Content Include="lib\enrollments.jpg" />
+    <Content Include="lib\instructor.jpg" />
+    <Content Include="lib\lesson.jpg" />
+    <Content Include="lib\student.jpg" />
     <Content Include="PopularCourseDetails.aspx" />
     <Content Include="StudentEnrollmentDetails.aspx" />
     <Content Include="Test.aspx" />

@@ -27,11 +27,11 @@
                     <h6 class="text-info ms-4"><i class="bi bi-list-nested"></i>Navbar</h6>
                     <hr class="text-white" />
                 </li>
-                  <li class="nav-item">
-      <a href="Dashboard.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-person-check-fill"></i> Student</a>
-  </li>
                 <li class="nav-item">
-                    <a href="Index.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-person-check-fill"></i> Student</a>
+                    <a href="Dashboard.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-terminal"></i>  Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Index.aspx" class="nav-link mt-1 mb-1"><i class="bi bi-person-check-fill"></i>  Student</a>
                 </li>
                 <li class="nav-item">
                     <a href="Instructor.aspx" class="nav-link mt-3 mb-1"><i class="bi bi-person-square"></i>  Instructor</a>

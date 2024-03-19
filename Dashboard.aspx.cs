@@ -13,5 +13,15 @@ namespace ELearningPlatform
         {
 
         }
+
+        protected void Chart1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

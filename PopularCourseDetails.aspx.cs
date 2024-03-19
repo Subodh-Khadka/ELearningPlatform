@@ -36,11 +36,14 @@ namespace ELearningPlatform
             else
             {
             SqlDataSource1.SelectCommand = @"
-            SELECT c.COURSEID, c.COURSETITLE, COUNT(s.STUDENTNO) AS ENROLLMENT_COUNT 
-            FROM COURSE c, COURSE_INSTRUCTOR_STUDENT cis, STUDENT s 
-            WHERE c.COURSEID = cis.COURSEID AND cis.STUDENTID = s.STUDENTNO 
-            GROUP BY c.COURSEID, c.COURSETITLE 
-            ORDER BY ENROLLMENT_COUNT DESC";
+           SELECT * FROM (
+                    SELECT e.COURSEID, c.COURSETITLE, COUNT(e.STUDENTNO) AS ENROLLMENT_COUNT
+                    FROM enrollment e
+                    JOIN course c ON e.COURSEID = c.COURSEID
+                    WHERE EXTRACT(MONTH FROM e.ENROLLDATE) = 1
+                    GROUP BY e.COURSEID, c.COURSETITLE
+                    ORDER BY COUNT(e.STUDENTNO) DESC) 
+            WHERE ROWNUM <= 3";
             }
             GridView1.DataBind();
         }

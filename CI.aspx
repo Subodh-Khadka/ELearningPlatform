@@ -29,8 +29,8 @@
     <asp:SqlDataSource ID="cigrid" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" 
         SelectCommand="SELECT c.COURSEID, c.COURSETITLE, i.COURSEINSTRUCTORID, i.COURSEINSTRUCTORNAME
 FROM course c
-LEFT JOIN course_instructor_student cis ON c.COURSEID = cis.COURSEID
-LEFT JOIN instructor i ON cis.COURSEINSTRUCTORID = i.COURSEINSTRUCTORID
+JOIN course_instructor_student cis ON c.COURSEID = cis.COURSEID
+JOIN instructor i ON cis.COURSEINSTRUCTORID = i.COURSEINSTRUCTORID
                        AND i.COURSEINSTRUCTORID IN (
                             SELECT COURSEINSTRUCTORID
                             FROM course_instructor_student

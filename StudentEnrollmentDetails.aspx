@@ -15,10 +15,10 @@
             <asp:BoundField ItemStyle-CssClass="p-1 border-1"  DataField="STUDENTNO" HeaderText="STUDENTNO" ReadOnly="True" SortExpression="STUDENTNO" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="STUDENTNAME" HeaderText="STUDENTNAME" SortExpression="STUDENTNAME" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="CONTACT" HeaderText="CONTACT" SortExpression="CONTACT" />
-            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="DOB" HeaderText="DOB" SortExpression="DOB" />
+            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="DOB" HeaderText="DOB" SortExpression="DOB"  DataFormatString="{0:MM/dd/yyyy}"/>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="EMAILADDRESS" HeaderText="EMAILADDRESS" SortExpression="EMAILADDRESS" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COUNTRY" HeaderText="COUNTRY" SortExpression="COUNTRY" />
-            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="ENROLLDATE" HeaderText="ENROLLDATE" SortExpression="ENROLLDATE" />
+            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="ENROLLDATE" HeaderText="ENROLLDATE" SortExpression="ENROLLDATE" DataFormatString="{0:MM/dd/yyyy}"/>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COURSEID" HeaderText="COURSEID" ReadOnly="True" SortExpression="COURSEID" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COURSETITLE" HeaderText="COURSETITLE" SortExpression="COURSETITLE" />
         </Columns>

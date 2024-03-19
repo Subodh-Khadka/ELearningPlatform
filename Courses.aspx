@@ -19,7 +19,7 @@
     <h5 class="ms-2 text-secondary">Course List</h5>
     <hr class="mb-3" />
 
-    <asp:GridView ID="GridView1" runat="server" CssClass=" m-2 p-2 text-secondary text-center" AutoGenerateColumns="False" BackColor="#393E46" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="COURSEID" DataSourceID="SqlDataSource2" Width="1000px">
+    <asp:GridView ID="GridView1" runat="server" CssClass="m-2 p-2 text-secondary text-center" AutoGenerateColumns="False" BackColor="#393E46" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="COURSEID" DataSourceID="SqlDataSource2" Width="1000px">
         <Columns>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COURSEID" HeaderText="COURSEID" ReadOnly="True" SortExpression="COURSEID" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COURSETITLE" HeaderText="COURSETITLE" SortExpression="COURSETITLE" />
@@ -64,7 +64,7 @@
             <div class="row justify-content-center text-secondary ms-2 add">
                 <h6 class="bg-info p-2 w-50 mt-2 text-center text-white">Add New Course</h6>
                 <br />
-                <div class="col-6 d-flex flex-wrap gap-2 mb-1 border-2 bg-light p-2">
+                <div class="col-8 d-flex flex-wrap gap-2 mb-1 border-2 bg-light p-2">
                     <div class="form-group">
                         <label for="COURSEIDTextBox">Course ID:</label>
                         <br />
@@ -77,8 +77,12 @@
                         <asp:TextBox ID="COURSETITLETextBox" runat="server" CssClass="form-control-sm" Text='<%# Bind("COURSETITLE") %>' />
                     </div>
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-sm  btn-primary mt-0" CausesValidation="True" CommandName="Insert" Text='<i class="bi bi-plus-circle-fill"></i> Insert'/>
+
+                </div>
+                <div class="ms-5 mb-2">
+                    <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-sm  btn-primary mt-0" CausesValidation="True" CommandName="Insert" Text='<i class="bi bi-plus-circle-fill"></i> Insert' />
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-sm  btn-danger mt-0" runat="server" CausesValidation="False" CommandName="Cancel" Text=' <i class="bi bi-x-circle-fill"></i> Cancel' />
+                </div>
         </InsertItemTemplate>
         <ItemTemplate>
             <div class="mb-5">

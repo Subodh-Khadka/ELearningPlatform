@@ -10,7 +10,7 @@
         <Columns>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="LESSONNO" HeaderText="LESSONNO" ReadOnly="True" SortExpression="LESSONNO" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="LESSONSTATUS" HeaderText="LESSONSTATUS" SortExpression="LESSONSTATUS" />
-            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="LASTACCESSEDDATE" HeaderText="LASTACCESSEDDATE" SortExpression="LASTACCESSEDDATE" />
+            <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="LASTACCESSEDDATE" HeaderText="LASTACCESSEDDATE" SortExpression="LASTACCESSEDDATE" DataFormatString="{0:MM/dd/yyyy}"/>
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="STUDENTNO" HeaderText="STUDENTNO" ReadOnly="True" SortExpression="STUDENTNO" />
             <asp:BoundField ItemStyle-CssClass="p-1 border-1" DataField="COURSEID" HeaderText="COURSEID" ReadOnly="True" SortExpression="COURSEID" />
             <asp:CommandField ItemStyle-CssClass="p-1 border-1" ShowDeleteButton="True" ShowEditButton="True" />
@@ -71,7 +71,7 @@
             <div class="row justify-content-center text-secondary ms-2 add">
                 <h6 class="bg-info p-2 w-50 mt-2 text-center text-white">Add New Progress Status</h6>
                 <br />
-                <div class="col-6 d-flex flex-wrap gap-2 bg-light border-2 mb-3  p-2">
+                <div class="col-8 d-flex flex-wrap gap-2 bg-light border-2 mb-3  p-2">
                     <div class="form-group">
                         <label for="LESSONNOTextBox">Lesson No:</label>
                         <br />
@@ -96,7 +96,7 @@
                         <asp:TextBox ID="STUDENTNOTextBox" runat="server" CssClass="form-control-sm" Text='<%# Bind("STUDENTNO") %>' />
                     </div>
                     <br />
-                    <div class="form-group col-10">
+                    <div class="form-group col-8">
                         <label for="COURSEIDTextBox">Course ID:</label>
                         <br />
                         <asp:TextBox ID="COURSEIDTextBox" runat="server" CssClass="form-control-sm" Text='<%# Bind("COURSEID") %>' />
